@@ -8,7 +8,7 @@ namespace ExtensionMethods
     /// By using extension methods the methods can be use anywhere in the code. Dorethy likes statistics so maybe she wants
     /// same methods to be used in future iterations.
     /// </summary>
-    public static class FlexyBoxExtensions
+    public static class FlexyBoxStringExtensions
     {
         public static int WordCount(this String str)
         {
