@@ -1,5 +1,6 @@
 ﻿using ExtensionMethods;
 using FlexyBoxSuperSearcher.FileFolderSearcher;
+using FlexyBoxSuperSearcher.InternetSearcher;
 using System;
 
 namespace FlexyBoxSuperSearcher
@@ -11,7 +12,7 @@ namespace FlexyBoxSuperSearcher
             Console.WriteLine("FlexyBox SuperSearcher");
             Console.Write("Please enter the name you want to search for and press 'enter': ");
             //var consoleInput = Console.ReadLine();
-            var consoleInput = "bi";
+            var consoleInput = "odense";
             Console.WriteLine("You typed in: ");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(consoleInput);
@@ -19,7 +20,8 @@ namespace FlexyBoxSuperSearcher
             Console.WriteLine();
 
             // Start searching folders
-            PrintFilesAndFolders(consoleInput, 3);
+            //PrintFilesAndFolders(consoleInput, 3);
+            PrintInternetResults(consoleInput);
             // Start seatching internet
 
             //PrintStatistics(consoleInput);
@@ -54,7 +56,7 @@ namespace FlexyBoxSuperSearcher
 
         private static void PrintFilesAndFolders(string input, int maxResultsToShow)
         {
-            Console.WriteLine("Searching for files and folders containing 'input'.");
+            Console.WriteLine($"Searching for files and folders containing '{input}'.");
 
             var fileFolderSearcherDao = new FileFolderSearcherImpl();
             var fileFolderObjects = fileFolderSearcherDao.FileFolderSearcher(input);
@@ -70,6 +72,19 @@ namespace FlexyBoxSuperSearcher
             }
 
             Console.WriteLine();
+        }
+
+        private static void PrintInternetResults(string input)
+        {
+            Console.WriteLine($"Searching for weather containing '{input}'.");
+
+            var internetSearcherDao = new InternetSearcherImpl();
+            var internetSearchResult = internetSearcherDao.InternetSearcher(input);
+
+            Console.WriteLine($"- In {internetSearchResult.PlaceName}");
+            Console.WriteLine($"- it is {internetSearchResult.Weather}.");
+            Console.WriteLine($"- The temperature is {internetSearchResult.TemperatureCelcius}° cel.");
+            Console.WriteLine($"- and the windspeed is {internetSearchResult.WindspeedMS} Ms.");
         }
     }
 }
