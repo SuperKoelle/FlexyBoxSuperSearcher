@@ -1,4 +1,4 @@
-﻿using ExtensionMethods;
+﻿using FlexyBoxSuperSearcher.ExtensionMethods;
 using FlexyBoxSuperSearcher.FileFolderSearcher;
 using FlexyBoxSuperSearcher.InternetSearcher;
 using System;
@@ -85,6 +85,8 @@ namespace FlexyBoxSuperSearcher
             Console.WriteLine($"- it is {internetSearchResult.Weather}.");
             Console.WriteLine($"- The temperature is {internetSearchResult.TemperatureCelcius}° cel.");
             Console.WriteLine($"- and the windspeed is {internetSearchResult.WindspeedMS} Ms.");
+            
+            Console.WriteLine();
         }
     }
 }

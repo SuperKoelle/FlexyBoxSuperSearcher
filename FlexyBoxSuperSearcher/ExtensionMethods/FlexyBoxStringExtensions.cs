@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ExtensionMethods
+namespace FlexyBoxSuperSearcher.ExtensionMethods
 {
     /// <summary>
     /// By using extension methods the methods can be use anywhere in the code. Dorethy likes statistics so maybe she wants
