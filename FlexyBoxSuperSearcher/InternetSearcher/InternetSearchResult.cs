@@ -1,17 +1,21 @@
-namespace FlexyBoxSuperSearcher.InternetSearcher
+namespace FlexyBoxSuperSearcher.WeatherSearcher
 {
-    public class InternetSearchResult
+    public class WeatherSearchResult
     {
         private string weather;
         private string placeName;
         private float temperatureCelcius;
         private float windspeedMS;
-        public InternetSearchResult(string weather, string placeName, float temperatureCelcius, float windspeedMS)
+        public WeatherSearchResult(string weather, string placeName, float temperatureCelcius, float windspeedMS)
         {
             this.weather = weather;
             this.placeName = placeName;
             this.temperatureCelcius = temperatureCelcius;
             this.windspeedMS = windspeedMS;
+        }
+        public WeatherSearchResult(string message)
+        {
+            this.message = message;
         }
         public float WindspeedMS
         {
@@ -33,5 +37,12 @@ namespace FlexyBoxSuperSearcher.InternetSearcher
             get { return weather; }
             set { weather = value; }
         }
+        private string message;
+        public string Message
+        {
+            get { return message; }
+            set { message = value; }
+        }
+            
     }
 }

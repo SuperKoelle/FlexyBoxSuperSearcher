@@ -1,7 +1,12 @@
-namespace FlexyBoxSuperSearcher.InternetSearcher
+namespace FlexyBoxSuperSearcher.WeatherSearcher
 {
-    public interface InternetSearcherDao
+    public interface WeatherSearcherDao
     {
-        InternetSearchResult InternetSearcher(string query);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
+        WeatherSearchResult WeatherSearcher(string query);
     }
 }

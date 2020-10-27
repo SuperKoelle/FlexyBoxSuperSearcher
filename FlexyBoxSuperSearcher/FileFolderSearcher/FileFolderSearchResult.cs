@@ -2,11 +2,11 @@ using System.IO;
 
 namespace FlexyBoxSuperSearcher.FileFolderSearcher
 {
-    public class FileFolderSeacher
+    public class FileFolderSearchResult
     {
         private FileInfo fileInfo;
 
-        public FileFolderSeacher(string fileInfo)
+        public FileFolderSearchResult(string fileInfo)
         {
             this.fileInfo = new FileInfo(fileInfo);
         }
